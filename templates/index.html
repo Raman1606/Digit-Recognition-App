@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Digit Recognition</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Digit Recognition</h1>
+        <form action="/predict" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" required>
+            <button type="submit">Upload & Predict</button>
+        </form>
+
+        {% if prediction %}
+            <div class="result">Predicted Digit: {{ prediction }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>
